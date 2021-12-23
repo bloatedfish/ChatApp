@@ -4,8 +4,10 @@ from PySide6 import QtCore, QtWidgets, QtGui
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
+
         # Set Window Title
         self.setWindowTitle('Chat App')
+
         # Label
         self.text = QtWidgets.QLabel("Chat App",
                                      alignment=QtCore.Qt.AlignTop)
@@ -14,6 +16,7 @@ class MyWidget(QtWidgets.QWidget):
         self.layout.addWidget(self.text)
 
 if __name__ == "__main__":
+    
     app = QtWidgets.QApplication([])
 
     widget = MyWidget()
