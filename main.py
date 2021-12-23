@@ -1,14 +1,23 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow
 import sys
- 
-class Window(QMainWindow):
-   def __init__(self):
-       super().__init__()
- 
-       self.setGeometry(300, 300, 600, 400)
-       self.setWindowTitle("Chat App")
-       self.show()
- 
-app = QApplication(sys.argv)
-window = Window()
-sys.exit(app.exec_())
+import random
+from PySide6 import QtCore, QtWidgets, QtGui
+class MyWidget(QtWidgets.QWidget):
+    def __init__(self):
+        super().__init__()
+        # Set Window Title
+        self.setWindowTitle('Chat App')
+        # Label
+        self.text = QtWidgets.QLabel("Chat App",
+                                     alignment=QtCore.Qt.AlignTop)
+        # Layout
+        self.layout = QtWidgets.QVBoxLayout(self)
+        self.layout.addWidget(self.text)
+
+if __name__ == "__main__":
+    app = QtWidgets.QApplication([])
+
+    widget = MyWidget()
+    widget.resize(1280, 720)
+    widget.show()
+
+    sys.exit(app.exec())
